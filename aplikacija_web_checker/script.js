@@ -20,19 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Filter JSON by desired parameters
       const filteredData = tableData.map((row) => ({
-        sifra: row.sifra,
-        name: row.name,
-        price: row.price,
+        sifra: row.ARTNO,
+        name: row.ARTNAME_UNICODE,
+        price: row.PRICE1,
       }));
 
       /*    // Compare each row with API
           for (const row of filteredData) {
-            const apiData = await fetchProductBySifra(row.sifra);
+            const apiData = await fetchProductBySifra(row.ARTNO);
             const resultRow = compareRow(row, apiData);
             addRowToTable(resultRow);
           } */
 
-      console.log("Parsed Data:", filtered);
+      console.log("Parsed Data:", filteredData);
       alert("Check console for parsed data.");
     };
 
